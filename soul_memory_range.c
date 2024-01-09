@@ -3,7 +3,7 @@
 
 int main(int argc, char** argv){
         if(argc != 3){
-                printf("./soulsmemory <host_soulsmemory> <summon_soulsmemory>\n");
+                printf("./soul_memory_range <host_soulmemory> <summon_soulmemory>\n");
                 exit(1);
         }
         int input_host=atoi(argv[1]);
