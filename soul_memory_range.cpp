@@ -1,12 +1,27 @@
 #include <iostream>
-
+/*
+        Soul memory for everything
+Usage: ./a.out <host_soulmemory> <summon_soulmemory> <item>
+Items:
+        0: White Sign Soapstone
+        1: White Sign Soapstone with Name-Engraved Ring
+        2: Small White Sign Soapstone
+        3: Small White Sign Soapstone with Name-Engraved Ring
+        4: Cracked Red Eye Orb & Bell Keepers
+        5: Cracked Red Eye Orb
+        6: Red Sign Soapstone
+        7: Dragon Eye
+        8: Rat King Covenant
+*/
 int main(int argc, char** argv){
-        if(argc != 3){
-                printf("./soulsmemory <host_soulsmemory> <summon_soulsmemory>\n");
+        if(argc != 4){
+                printf("Usage: ./soul_memory_range <host_soulmemory> <summon_soulmemory> <item>\nItems:\n0: White Sign Soapstone\n1: White Sign Soapstone with Name-Engraved Ring\n2: Small White Sign Soapstone\n3: Small White Sign Soapstone with Name-Engraved Ring\n4: Cracked Red Eye Orb & Bell Keepers\n5: Cracked Red Eye Orb\n6: Red Sign Soapstone\n7: Dragon Eye\n8: Rat King Covenant\nFor example:./soul_memory_range 70000 20000 1\n");
                 exit(1);
         }
+        int modes[9] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
         int input_host=atoi(argv[1]);
         int input_summon=atoi(argv[2]);
+        int input_mode=atoi(argv[3]);
         int souls[44][2] = 
         {
         {0, 9999}, 
@@ -54,19 +69,161 @@ int main(int argc, char** argv){
         {30000000, 44999999},
         {45000000, 999999999},
         };
-	int i;
-	int host_bracket;
-    	for (i = 0; i < sizeof(souls) / sizeof(souls[0]); i++) {
-        	if (input_host >= souls[i][0] && input_host <= souls[i][1]) {
-            		host_bracket=i;
-            		break;
-        	}
-    	}
-	if(input_summon >= souls[host_bracket-2][0] && input_summon <= souls[host_bracket+1][1]){
-		printf("Matchable\n");		
-	}
-	else{
-		printf("Not matchable\n");
-	}
+        switch(input_mode){
+                case 0:{
+                        int i;
+	                int host_bracket;
+    	                for (i = 0; i < sizeof(souls) / sizeof(souls[0]); i++) {
+        	                if (input_host >= souls[i][0] && input_host <= souls[i][1]) {
+            	        	host_bracket=i;
+            	        	break;
+        	                }
+    	                }
+	                if(input_summon >= souls[host_bracket-2][0] && input_summon <= souls[host_bracket+1][1]){
+		                printf("Matchable (using: White Sign Soapstone)\n");		
+	                }
+	                else{
+		                printf("Not matchable (using: White Sign Soapstone)\n");
+	                }
+                        break;
+                }
+                case 1:{
+                        int i;
+	                int host_bracket;
+    	                for (i = 0; i < sizeof(souls) / sizeof(souls[0]); i++) {
+        	                if (input_host >= souls[i][0] && input_host <= souls[i][1]) {
+            	        	host_bracket=i;
+            	        	break;
+        	                }
+    	                }
+	                if(input_summon >= souls[host_bracket-5][0] && input_summon <= souls[host_bracket+1][4]){
+		                printf("Matchable (using: White Sign Soapstone with Name-Engraved Ring)\n");		
+	                }
+	                else{
+		                printf("Not matchable (using: White Sign Soapstone with Name-Engraved Ring)\n");
+	                }
+                        break;
+                }
+                case 2:{
+                        int i;
+	                int host_bracket;
+    	                for (i = 0; i < sizeof(souls) / sizeof(souls[0]); i++) {
+        	                if (input_host >= souls[i][0] && input_host <= souls[i][1]) {
+            	        	host_bracket=i;
+            	        	break;
+        	                }
+    	                }
+	                if(input_summon >= souls[host_bracket-3][0] && input_summon <= souls[host_bracket+1][1]){
+		                printf("Matchable (using: Small White Sign Soapstone)\n");		
+	                }
+	                else{
+		                printf("Not matchable (using: Small White Sign Soapstone)\n");
+	                }
+                        break;
+                }
+                case 3:{
+                        int i;
+	                int host_bracket;
+    	                for (i = 0; i < sizeof(souls) / sizeof(souls[0]); i++) {
+        	                if (input_host >= souls[i][0] && input_host <= souls[i][1]) {
+            	        	host_bracket=i;
+            	        	break;
+        	                }
+    	                }
+	                if(input_summon >= souls[host_bracket-6][0] && input_summon <= souls[host_bracket+5][1]){
+		                printf("Matchable (using: Small White Sign Soapstone with Name-Engraved Ring)\n");		
+	                }
+	                else{
+		                printf("Not matchable (using: Small White Sign Soapstone with Name-Engraved Ring)\n");
+	                }
+                        break;
+                }
+                case 4:{
+                        int i;
+	                int host_bracket;
+    	                for (i = 0; i < sizeof(souls) / sizeof(souls[0]); i++) {
+        	                if (input_host >= souls[i][0] && input_host <= souls[i][1]) {
+            	        	host_bracket=i;
+            	        	break;
+        	                }
+    	                }
+	                if(input_summon >= souls[host_bracket][0] && input_summon <= souls[host_bracket+3][1]){
+		                printf("Matchable (using: Cracked Red Eye Orb & Bell Keepers)\n");		
+	                }
+	                else{
+		                printf("Not matchable (using: Cracked Red Eye Orb & Bell Keepers)\n");
+	                }
+                        break;
+                }
+                case 5:{
+                        int i;
+	                int host_bracket;
+    	                for (i = 0; i < sizeof(souls) / sizeof(souls[0]); i++) {
+        	                if (input_host >= souls[i][0] && input_host <= souls[i][1]) {
+            	        	host_bracket=i;
+            	        	break;
+        	                }
+    	                }
+	                if(input_summon >= souls[host_bracket-2][0] && input_summon <= souls[host_bracket+2][1]){
+		                printf("Matchable (using: Cracked Blue Eye Orb)\n");		
+	                }
+	                else{
+		                printf("Not matchable (using: Cracked Blue Eye Orb)\n");
+	                }
+                        break;
+                }
+                case 6:{
+                        int i;
+	                int host_bracket;
+    	                for (i = 0; i < sizeof(souls) / sizeof(souls[0]); i++) {
+        	                if (input_host >= souls[i][0] && input_host <= souls[i][1]) {
+            	        	host_bracket=i;
+            	        	break;
+        	                }
+    	                }
+	                if(input_summon >= souls[host_bracket-3][0] && input_summon <= souls[host_bracket+2][1]){
+		                printf("Matchable (using: Red Sign Soapstone)\n");		
+	                }
+	                else{
+		                printf("Not matchable (using: Red Sign Soapstone)\n");
+	                }
+                        break;
+                }
+                case 7:{
+                        int i;
+	                int host_bracket;
+    	                for (i = 0; i < sizeof(souls) / sizeof(souls[0]); i++) {
+        	                if (input_host >= souls[i][0] && input_host <= souls[i][1]) {
+            	        	host_bracket=i;
+            	        	break;
+        	                }
+    	                }
+	                if(input_summon >= souls[host_bracket-4][0] && input_summon <= souls[host_bracket+4][1]){
+		                printf("Matchable (using: Dragon Eye)\n");		
+	                }
+	                else{
+		                printf("Not matchable (using: Dragon Eye)\n");
+	                }
+                        break;
+                }
+                case 8:{
+                        int i;
+	                int host_bracket;
+    	                for (i = 0; i < sizeof(souls) / sizeof(souls[0]); i++) {
+        	                if (input_host >= souls[i][0] && input_host <= souls[i][1]) {
+            	        	host_bracket=i;
+            	        	break;
+        	                }
+    	                }
+	                if(input_summon >= souls[host_bracket-1][0] && input_summon <= souls[host_bracket+3][1]){
+		                printf("Matchable (using: Rat King Covenant)\n");		
+	                }
+	                else{
+		                printf("Not matchable (using: Rat King Covenant)\n");
+	                }
+                        break;
+                }
+
+        }
     	return 0;
 }
