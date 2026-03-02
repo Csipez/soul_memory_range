@@ -96,7 +96,7 @@ int main(int argc, char** argv){
             	        	break;
         	                }
     	                }
-	                if(input_summon >= souls[host_bracket-5][0] && input_summon <= souls[host_bracket+1][4]){
+	                if(input_summon >= souls[host_bracket-5][0] && input_summon <= souls[host_bracket+4][1]){
 		                printf("Matchable (using: White Sign Soapstone with Name-Engraved Ring)\n");		
 	                }
 	                else{
